@@ -1,13 +1,17 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
 import { cn } from "@/lib/utils"; // Utility function for conditional classNames
 
 const MainPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen font-sans">
       {/* Header */}
       <header className="bg-white text-[#4C368C] py-4 shadow-md">
-        <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+        <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
           {/* Logo and Title */}
           <div className="flex items-center space-x-3">
             <img
@@ -22,9 +26,35 @@ const MainPage = () => {
               </p>
             </div>
           </div>
+
+          {/* Burger Menu Button */}
+          <button
+            className="lg:hidden text-[#4C368C] focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              ></path>
+            </svg>
+          </button>
+
           {/* Menus */}
-          <nav className="flex-grow mt-4 sm:mt-0">
-            <ul className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
+          <nav
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } lg:flex lg:flex-grow lg:justify-center lg:items-center lg:space-x-6`}
+          >
+            <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 mt-4 lg:mt-0">
               <li>
                 <a
                   href="#home"
@@ -59,8 +89,9 @@ const MainPage = () => {
               </li>
             </ul>
           </nav>
+
           {/* Waitlist Button */}
-          <div className="mt-4 sm:mt-0">
+          <div className="hidden lg:block mt-4 sm:mt-0">
             <Button
               variant="outline"
               className="border-[#4C368C] text-[#4C368C] hover:bg-[#4C368C] hover:text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 cursor-pointer transition duration-300 ease-in-out"
@@ -71,10 +102,27 @@ const MainPage = () => {
         </div>
       </header>
 
+      {/* Background Section */}
+      <div
+        className="relative h-[500px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full bg-cover bg-center px-6 lg:px-12"
+        style={{
+          backgroundImage: "url('./imgs/background.png')",
+        }}
+      >
+        {/* Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(0deg, #4C368C 0%, #39286A 100%)",
+            opacity: 0.7,
+          }}
+        ></div>
+      </div>
+
       {/* Hero Section */}
       <main className="flex-grow">
-        <section className="bg-gray-100 py-10 sm:py-20">
-          <div className="container mx-auto text-center px-4">
+        <section className="bg-gray-100 py-10 sm:py-20 px-6 lg:px-12">
+          <div className="container mx-auto text-center">
             <h1 className="text-2xl sm:text-4xl font-bold mb-4">Welcome to Our Website</h1>
             <p className="text-sm sm:text-lg text-gray-700 mb-6">
               We provide the best solutions for your business needs.
@@ -90,8 +138,8 @@ const MainPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#4C368C] text-white py-4">
-        <div className="container mx-auto text-center px-4">
+      <footer className="bg-[#4C368C] text-white py-4 px-6 lg:px-12">
+        <div className="container mx-auto text-center">
           <p>&copy; {new Date().getFullYear()} Quantum Space Dynamics. All rights reserved.</p>
         </div>
       </footer>
