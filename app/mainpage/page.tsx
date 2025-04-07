@@ -93,7 +93,7 @@ const MainPage = () => {
                     <div className="hidden lg:block mt-4 sm:mt-0">
                         <Button
                             variant="outline"
-                            className="border-[#4C368C] text-[#4C368C] hover:bg-[#4C368C] hover:text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 cursor-pointer transition duration-300 ease-in-out"
+                            className="border-[#4C368C] text-[#4C368C] hover:bg-[#4C368C] hover:text-white rounded-full px-3 py-1 sm:px-4 sm:py-2 cursor-pointer transition duration-300 ease-in-out"
                         >
                             Join Our Waitlist
                         </Button>
@@ -132,13 +132,13 @@ const MainPage = () => {
                         <p className="text-sm sm:text-base mb-4">
                             Join our waitlist for our upcoming product
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg border bg-white pl-4 pr-2 py-1">
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-full border bg-white pl-4 pr-2 py-1">
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
                                 className="px-4 py-2 flex-grow text-[#4C368C] border-none outline-none"
                             />
-                            <button className="bg-[#4C368C] text-white border rounded-lg px-6 py-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-[#4C368C] hover:border-[#4C368C]">
+                            <button className="bg-[#4C368C] text-white border rounded-full px-6 py-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-[#4C368C] hover:border-[#4C368C]">
                                 Join Our Waitlist
                             </button>
                         </div>
