@@ -1,11 +1,70 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
 import { cn } from "@/lib/utils"; // Utility function for conditional classNames
 
 const MainPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const divItes = [
+        {
+            id: 1,
+            title: "AI & Big Data Solutions",
+            subText: "We utilize machine learning to improve processes and provide predictive insights.",
+            img: "./imgs/first.png",
+        },
+        {
+            id: 2,
+            title: "Optimized Security",
+            subText: "We implement advanced AI & Big Data Solutions to enhance and safeguard your business's security.",
+            img: "./imgs/sec.png",
+        },
+        {
+            id: 3,
+            title: "Predictive Learning",
+            subText: "We utilize machine learning to improve processes and provide predictive insights.",
+            img: "./imgs/third.png",
+        },
+    ];
+    const carouselItems = [
+        {
+            id: 1,
+            title: "MACHINE LEARNING",
+            subText: "We utilize machine learning to improve processes and provide predictive insights.",
+            img: "./imgs/first.png",
+        },
+        {
+            id: 2,
+            title: "OPTIMIZED SECURITY",
+            subText: "We implement advanced AI & Big Data Solutions to enhance and safeguard your business's security.",
+            img: "./imgs/sec.png",
+        },
+        {
+            id: 3,
+            title: "PREDICTIVE LEARNING",
+            subText: "We utilize machine learning to improve processes and provide predictive insights.",
+            img: "./imgs/third.png",
+        },
+    ];
+
+    // Autoplay functionality
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+        }, 3000); // Change slide every 3 seconds
+        return () => clearInterval(interval);
+    }, [carouselItems.length]);
+
+    const getPositionClass = (index: number) => {
+        const totalItems = carouselItems.length;
+        const diff = (index - currentIndex + totalItems) % totalItems;
+
+        if (diff === 0) return "scale-100 z-10 opacity-100"; // Active item
+        if (diff === 1 || diff === totalItems - 1) return "scale-75 z-5 opacity-50"; // Next or previous item
+        return "scale-50 z-0 opacity-0"; // Hidden items
+    };
 
     return (
         <div className="flex flex-col min-h-screen font-sans">
@@ -105,7 +164,7 @@ const MainPage = () => {
 
                 {/* Background Section */}
                 <section
-                    className="relative h-[500px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full bg-cover bg-center"
+                    className="relative h-[500px] sm:h-[400px] md:h-[500px] mb-12 lg:h-[600px] w-full bg-cover bg-center"
                     style={{
                         backgroundImage: "url('./imgs/background.png')",
                     }}
@@ -114,7 +173,7 @@ const MainPage = () => {
                     <div
                         className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center lg:justify-between px-6 lg:px-18"
                         style={{
-                            background: "linear-gradient(180deg, #4C368C 0%, #39286A 100%)",
+                            background: "linear-gradient(180deg, #4C368C 0%, #ffffff 100%)",
                             opacity: 0.9,
                         }}
                     >
@@ -158,17 +217,68 @@ const MainPage = () => {
                 </section>
 
                 {/* Features Section */}
-                <section className="flex flex-col lg:flex-row items-stretch mt-6 lg:mt-12 gap-4 lg:p-12">
+                <section className="flex flex-col lg:flex-row items-stretch mt-12 lg:mb-12 gap-4 lg:p-12">
                     {/* Left Half with 4 Divs */}
-                    <div className="bg-[#39286A] text-white w-full lg:w-1/2 p-6 lg:p-12 rounded-lg shadow-md">
+                    <div className="w-full lg:w-1/2 flex justify-center h-full">
+                        <img
+                            src="./imgs/secong.png"
+                            alt="Why Choose Us"
+                            className="w-full h-full max-w-[750px] lg:max-w-[750px] object-cover"
+                        />
+                    </div>
+
+                    {/* Right Half with Dynamic Content */}
+                    <div className="flex flex-col justify-start items-start w-full lg:w-1/2 p-6 lg:p-12 lg:pt-1">
+                        <p className="px-8 py-2 rounded-full text-xs font-bold bg-[#C5E0FF] text-[#4C368C] mb-4">About Us</p>
+                        <h2 className="text-xl lg:text-6xl font-bold text-[#4C368C] mb-8 mt-6">
+                            Our Excellent AI & Big Data Solutions for Your Business
+                        </h2>
+                        <p className="text-lg lg:text-lg text-gray-700 mt-8">
+                            Our business enables you to streamline operations, enhance customer experiences, and drive innovative growth strategies by leveraging advanced analytics, automation, and machine learning technologies to deliver actionable insights and optimize performance across all departments.
+                        </p>
+                    </div>
+                </section>
+
+                {/* Why Choose Us Section */}
+                <section className="flex flex-col lg:flex-row items-start mb-12 lg:items-start gap-8 lg:gap-12 px-6 lg:px-12 py-12">
+                    {/* Left Content */}
+                    <div className="flex flex-col justify-start items-start w-full lg:w-1/2 p-6 lg:p-12 lg:pt-1">
+                        <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#C3E4C5] text-[#4CAF50] mb-8">
+                            Why Choose Us
+                        </p>
+                        <div className="flex flex-col justify-start item-start">
+
+                            <h2 className="text-2xl lg:text-4xl font-bold text-[#4C368C] mb-8 mt-4">
+                                We're Best in AI and Big Data Solution Industry with 10 Years of Experience
+                            </h2>
+                            <p className="text-sm lg:text-base text-gray-700 mb-6">
+                                Leveraging a decade of expertise to deliver cutting-edge AI solutions that drive innovation and efficiency, we have consistently set industry standards. Our commitment to excellence and deep understanding of AI technologies enable us to provide tailored solutions that meet the unique needs of each client, ensuring sustained growth and competitive advantage.
+                            </p>
+                            <ul className="list-disc pl-6 text-sm lg:text-base text-gray-700 space-y-4">
+                                <li>
+                                    <span className="font-bold text-[#4C368C]">Proven Expertise:</span> With 10 years in the AI industry, we deliver reliable and innovative solutions.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-[#4C368C]">Customized Solutions:</span> We tailor AI solutions to meet your unique business needs.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-[#4C368C]">Cutting-Edge Technology:</span> We use the latest AI technologies to keep you ahead of the competition.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Right Image */}
+
+                    <div className="bg-[#39286A] text-white w-full lg:w-1/2 p-6 lg:p-8 rounded-lg shadow-md">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {/* Box 1 */}
-                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-6 shadow-md h-full min-h-[250px] transition duration-300 ease-in-out hover:bg-white">
+                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-5 shadow-md h-full min-h-[220px] transition duration-300 ease-in-out hover:bg-white">
                                 <div className="bg-[#39286A] group-hover:bg-[#EBEBEB] rounded-full p-4 mb-4 transition duration-300 ease-in-out">
                                     <img
                                         src="./imgs/1.svg"
                                         alt="Big Data Analysis"
-                                        className="w-16 h-16 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
+                                        className="w-14 h-14 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
                                     />
                                 </div>
                                 <h3 className="text-lg font-bold mb-2 text-center group-hover:text-[#4C368C] transition duration-300 ease-in-out">
@@ -180,12 +290,12 @@ const MainPage = () => {
                             </div>
 
                             {/* Box 2 */}
-                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-6 shadow-md h-full min-h-[250px] transition duration-300 ease-in-out hover:bg-white">
+                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-5 shadow-md h-full min-h-[220px] transition duration-300 ease-in-out hover:bg-white">
                                 <div className="bg-[#39286A] group-hover:bg-[#EBEBEB] rounded-full p-4 mb-4 transition duration-300 ease-in-out">
                                     <img
                                         src="./imgs/2.svg"
                                         alt="Data Security & Governance"
-                                        className="w-16 h-16 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
+                                        className="w-14 h-14 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
                                     />
                                 </div>
                                 <h3 className="text-lg font-bold mb-2 text-center group-hover:text-[#4C368C] transition duration-300 ease-in-out">
@@ -197,12 +307,12 @@ const MainPage = () => {
                             </div>
 
                             {/* Box 3 */}
-                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-6 shadow-md h-full min-h-[250px] transition duration-300 ease-in-out hover:bg-white">
+                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-5 shadow-md h-full min-h-[220px] transition duration-300 ease-in-out hover:bg-white">
                                 <div className="bg-[#39286A] group-hover:bg-[#EBEBEB] rounded-full p-4 mb-4 transition duration-300 ease-in-out">
                                     <img
                                         src="./imgs/3.svg"
                                         alt="Machine Learning"
-                                        className="w-16 h-16 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
+                                        className="w-14 h-14 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
                                     />
                                 </div>
                                 <h3 className="text-lg font-bold mb-2 text-center group-hover:text-[#4C368C] transition duration-300 ease-in-out">
@@ -214,12 +324,12 @@ const MainPage = () => {
                             </div>
 
                             {/* Box 4 */}
-                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-6 shadow-md h-full min-h-[250px] transition duration-300 ease-in-out hover:bg-white">
+                            <div className="group flex flex-col items-center justify-center bg-[#4C368C] rounded-lg p-5 shadow-md h-full min-h-[220px] transition duration-300 ease-in-out hover:bg-white">
                                 <div className="bg-[#39286A] group-hover:bg-[#EBEBEB] rounded-full p-4 mb-4 transition duration-300 ease-in-out">
                                     <img
                                         src="./imgs/4.svg"
                                         alt="Predictive Analysis"
-                                        className="w-16 h-16 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
+                                        className="w-14 h-14 object-contain group-hover:fill-[#39286A] transition duration-300 ease-in-out"
                                     />
                                 </div>
                                 <h3 className="text-lg font-bold mb-2 text-center group-hover:text-[#4C368C] transition duration-300 ease-in-out">
@@ -231,26 +341,110 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    {/* Right Half with Text Content */}
-                    <div className="flex flex-col justify-start items-start w-full lg:w-1/2 p-6 lg:p-12">
-                        <p className="px-8 py-2 rounded-full bg-[#C5E0FF] text-[#4C368C] mb-4">About Us</p>
-                        <h2 className="text-xl lg:text-6xl font-bold text-[#4C368C] mb-8 mt-6">
-                            Our Excellent AI & Big Data Solutions for Your Business
-                        </h2>
-                        <p className="text-lg lg:text-lg text-gray-700 mt-8">
-                            Our business enables you to streamline operations, enhance customer experiences, and drive innovative growth strategies by leveraging advanced analytics, automation, and machine learning technologies to deliver actionable insights and optimize performance across all departments.
+                {/* Carousel Section */}
+                <section className="h-screen px-6 lg:px-12 bg-[#39286A] py-8">
+                    <div className="flex flex-col items-center justify-start text-center">
+                        <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#F3F3F3] text-[#4C368C] mb-8">
+                            Our Features
                         </p>
+                        <h2 className="text-2xl lg:text-4xl font-bold text-white">
+                            Explore Our Recent AI & Big Data Solutions Case Studies
+                        </h2>
+                    </div>
+                    <div className="relative h-[90%] justify-center items-center flex flex-col">
+                        {/* Carousel Container */}
+                        <div className="flex items-center justify-center overflow-hidden h-full">
+                            {divItes.map((item, index) => (
+                                <div
+                                    key={item.id}
+                                    className={`absolute transition-all duration-500 ease-in-out flex flex-col items-start justify-between bg-[#4C368C] text-white text-left rounded-lg shadow-lg w-4/5 lg:w-[520px] h-[85%] p-6 pb-0.5 ${getPositionClass(index)
+                                        }`}
+                                    style={{
+                                        transform: `translateX(${(index - currentIndex) * 100}%)`,
+                                    }}
+                                >
+                                    <div className="flex flex-col">
+                                        <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-base lg:text-lg mb-4">
+                                            {item.subText}
+                                        </p>
+                                        <div>
+                                            <button
+                                                className={`px-6 py-2 inline-block rounded-full font-semibold transition duration-300 bg-white text-[#4C368C] border border-transparent hover:bg-transparent hover:border-white hover:text-white cursor-pointer`}
+                                                onClick={() => {
+                                                    if (item.id === 2) {
+                                                        window.location.href = "/verify";
+                                                    }
+                                                }}
+                                            >
+                                                {item.id === 2 ? "View More" : "Coming Soon"}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="w-full h-[80%] object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Controls */}
+                        <div className="transform -translate-x-1/2 flex items-center justify-center space-x-4 ">
+                            <button
+                                onClick={() =>
+                                    setCurrentIndex(
+                                        (prevIndex) =>
+                                            (prevIndex - 1 + divItes.length) % divItes.length
+                                    )
+                                }
+                                className="flex items-center justify-center bg-[#7968A9] text-white w-10 h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M15 19l-7-7 7-7"
+                                    />
+                                </svg>
+                            </button>
+                            <button
+                                onClick={() =>
+                                    setCurrentIndex((prevIndex) => (prevIndex + 1) % divItes.length)
+                                }
+                                className="flex items-center justify-center bg-[#7968A9] text-white w-10 h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </section>
             </div>
-
-            {/* Footer */}
-            <footer className="bg-[#4C368C] text-white py-4 px-6 lg:px-12">
-                <div className="container mx-auto text-center">
-                    <p>&copy; {new Date().getFullYear()} Quantum Space Dynamics. All rights reserved.</p>
-                </div>
-            </footer>
         </div>
     );
 };
