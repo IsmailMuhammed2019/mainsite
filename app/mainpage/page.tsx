@@ -607,71 +607,37 @@ const MainPage = () => {
                         </AccordionItem>
                     </Accordion>
                 </section>
-                <section className="px-6 lg:px-12 py-12 bg-white mt-8 flex justify-center items-center flex-col">
-    <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#4C368C] text-[#F3F3F3] mb-8">
-        Our Founders
+                <section className="px-6 lg:px-12 py-12 bg-[#1F1F1F] text-white mt-8 rounded-lg shadow-lg">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+        {/* Left Side */}
+        <div className="w-full lg:w-1/3 flex justify-center">
+            <img
+                src="./imgs/newsletter.png"
+                alt="Newsletter"
+                className="w-full h-auto max-w-[300px] lg:max-w-[350px] rounded-lg"
+            />
+        </div>
+
+        {/* Right Side */}
+        <div className="w-full lg:w-2/3 flex flex-col items-start lg:px-8">
+    <p className="text-sm font-bold text-[#4C368C] mb-10 px-8 py-2 bg-white rounded-full">Newsletter</p>
+    <h2 className="text-2xl lg:text-4xl font-bold mb-8">Let's Subscribe the Newsletter</h2>
+    <div className="w-full bg-white rounded-full flex items-center px-4 py-2 mb-4">
+        <input
+            type="email"
+            placeholder="Enter Email"
+            className="flex-grow text-sm text-[#4C368C] bg-transparent outline-none border-none pl-4 font-bold"
+        />
+        <img
+            src="./imgs/send.svg"
+            alt="Send Icon"
+            className="h-6 w-6 cursor-pointer"
+        />
+    </div>
+    <p className="text-sm text-gray-300">
+        Subscribe to our newsletter for exclusive insights, expert tips, and industry news delivered straight to your inbox.
     </p>
-    <div className="w-full max-w-6xl">
-        <Carousel className="w-full mx-auto">
-            <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index}>
-                        <div className="p-4">
-                            <Card className="bg-gray-100">
-                                <CardContent className="flex flex-col lg:flex-row items-center justify-between p-6 gap-6 bg-gray-100">
-                                    {/* Left Content */}
-                                    <div className="flex-1 p-6">
-                                        <h2 className="text-3xl lg:text-5xl font-bold text-[#4C368C] mb-4">Meet The Founders</h2>
-                                        <p className="text-base lg:text-lg text-gray-700 mb-6">
-                                            Meet our experienced team members, dedicated to delivering innovative AI & Big Data solutions and driving your business success with their extensive knowledge, proven expertise, and a passion for excellence.
-                                        </p>
-                                        <div className="justify-center items-center mt-8 flex flex-col">
-                                            <h2 className="text-xl lg:text-xl font-bold text-[#4C368C]">Dr. Didi Hart</h2>
-                                            <p className="text-sm text-gray-500 mt-2">Founder & CEO</p>
-                                        </div>
-                                    </div>
-                                    {/* Right Content */}
-                                    <div className="flex-1">
-                                        <img
-                                            src="./imgs/didi.png"
-                                            alt="Founder"
-                                            className="w-full h-auto rounded-lg shadow-lg"
-                                        />
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </CarouselItem>
-                ))}
-            </CarouselContent>
-            {/* Controls at the Bottom */}
-            <div className="flex justify-center items-center mt-4 space-x-4">
-                <CarouselPrevious className="bg-[#4C368C] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#39286A] transition duration-300">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </CarouselPrevious>
-                <CarouselNext className="bg-[#4C368C] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#39286A] transition duration-300">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </CarouselNext>
-            </div>
-        </Carousel>
+</div>
     </div>
 </section>
             </div>
