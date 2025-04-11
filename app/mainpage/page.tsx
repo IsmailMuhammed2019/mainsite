@@ -4,6 +4,14 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
 import { cn } from "@/lib/utils"; // Utility function for conditional classNames
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const MainPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -446,158 +454,225 @@ const MainPage = () => {
                 </section>
                 {/* FAQ Section */}
                 <section className="px-6 lg:px-12 py-12 bg-white mt-8 flex justify-center items-center flex-col">
-    <div className="flex flex-col items-center justify-start text-center mb-8">
-        <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#4C368C] text-[#F3F3F3] mb-8">
-            Popular FAQs
-        </p>
-        <h2 className="text-2xl lg:text-4xl font-bold text-[#4C368C] mb-4">Frequently Asked Questions</h2>
+                    <div className="flex flex-col items-center justify-start text-center mb-8">
+                        <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#4C368C] text-[#F3F3F3] mb-8">
+                            Popular FAQs
+                        </p>
+                        <h2 className="text-2xl lg:text-4xl font-bold text-[#4C368C] mb-4">Frequently Asked Questions</h2>
+                    </div>
+                    <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                What is Artificial Intelligence (AI)?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and make decisions like humans.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                How can AI & Big Data Solutions benefit my business?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                AI and Big Data Solutions can help your business by automating processes, providing predictive insights, improving customer experiences, and optimizing decision-making.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                What is machine learning?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Machine learning is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                How does machine learning improve decision-making?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Machine learning improves decision-making by analyzing large datasets, identifying patterns, and providing predictive insights to guide strategic actions.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-5">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                What is big data?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Big data refers to large and complex datasets that require advanced tools and techniques to store, process, and analyze for actionable insights.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-6">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                How can big data analysis help my business?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Big data analysis helps businesses uncover trends, identify opportunities, and make data-driven decisions to improve efficiency and profitability.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-7">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                What are the security implications of using AI and big data?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                Using AI and big data requires robust security measures to protect sensitive information, ensure compliance, and mitigate risks of data breaches.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-8">
+                            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
+                                How do I get started with AI, machine learning, and big data solutions?
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5 text-[#4C368C]"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
+                                To get started, consult with experts in AI, machine learning, and big data to assess your business needs, identify opportunities, and implement tailored solutions.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </section>
+                <section className="px-6 lg:px-12 py-12 bg-white mt-8 flex justify-center items-center flex-col">
+    <p className="inline-block px-6 py-2 rounded-full text-xs font-bold bg-[#4C368C] text-[#F3F3F3] mb-8">
+        Our Founders
+    </p>
+    <div className="w-full max-w-6xl">
+        <Carousel className="w-full mx-auto">
+            <CarouselContent>
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <CarouselItem key={index}>
+                        <div className="p-4">
+                            <Card className="bg-gray-100">
+                                <CardContent className="flex flex-col lg:flex-row items-center justify-between p-6 gap-6 bg-gray-100">
+                                    {/* Left Content */}
+                                    <div className="flex-1 p-6">
+                                        <h2 className="text-3xl lg:text-5xl font-bold text-[#4C368C] mb-4">Meet The Founders</h2>
+                                        <p className="text-base lg:text-lg text-gray-700 mb-6">
+                                            Meet our experienced team members, dedicated to delivering innovative AI & Big Data solutions and driving your business success with their extensive knowledge, proven expertise, and a passion for excellence.
+                                        </p>
+                                        <div className="justify-center items-center mt-8 flex flex-col">
+                                            <h2 className="text-xl lg:text-xl font-bold text-[#4C368C]">Dr. Didi Hart</h2>
+                                            <p className="text-sm text-gray-500 mt-2">Founder & CEO</p>
+                                        </div>
+                                    </div>
+                                    {/* Right Content */}
+                                    <div className="flex-1">
+                                        <img
+                                            src="./imgs/didi.png"
+                                            alt="Founder"
+                                            className="w-full h-auto rounded-lg shadow-lg"
+                                        />
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+            {/* Controls at the Bottom */}
+            <div className="flex justify-center items-center mt-4 space-x-4">
+                <CarouselPrevious className="bg-[#4C368C] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#39286A] transition duration-300">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </CarouselPrevious>
+                <CarouselNext className="bg-[#4C368C] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#39286A] transition duration-300">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </CarouselNext>
+            </div>
+        </Carousel>
     </div>
-    <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <AccordionItem value="item-1">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                What is Artificial Intelligence (AI)?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and make decisions like humans.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                How can AI & Big Data Solutions benefit my business?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                AI and Big Data Solutions can help your business by automating processes, providing predictive insights, improving customer experiences, and optimizing decision-making.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                What is machine learning?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Machine learning is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-4">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                How does machine learning improve decision-making?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Machine learning improves decision-making by analyzing large datasets, identifying patterns, and providing predictive insights to guide strategic actions.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-5">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                What is big data?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Big data refers to large and complex datasets that require advanced tools and techniques to store, process, and analyze for actionable insights.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-6">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                How can big data analysis help my business?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Big data analysis helps businesses uncover trends, identify opportunities, and make data-driven decisions to improve efficiency and profitability.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-7">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                What are the security implications of using AI and big data?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                Using AI and big data requires robust security measures to protect sensitive information, ensure compliance, and mitigate risks of data breaches.
-            </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-8">
-            <AccordionTrigger className="text-sm font-medium text-[#4C368C] bg-gray-100 rounded-lg px-6 py-4 border-0 flex justify-between items-center max-w-[500px] min-h-[80px]">
-                How do I get started with AI, machine learning, and big data solutions?
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#4C368C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 px-6 py-4 max-w-[500px] text-sm">
-                To get started, consult with experts in AI, machine learning, and big data to assess your business needs, identify opportunities, and implement tailored solutions.
-            </AccordionContent>
-        </AccordionItem>
-    </Accordion>
 </section>
             </div>
         </div>
