@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <>
-        <footer className="bg-[#39286A] text-white py-12 mt-8">
+            <footer className="bg-[#39286A] text-white py-12 mt-8">
                 <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-8">
                     {/* First Div */}
                     <div className="md:col-span-4 flex flex-col items-start">
@@ -83,9 +83,14 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Footer Bottom Text */}
+                <div className="mt-8 border-t border-gray-600 pt-4 text-center text-sm text-gray-400">
+                    © Quantum Space Dynamics All Rights Reserved. Designed By QSD Solutions
+                </div>
             </footer>
         </>
-    )
-}
+    );
+};
 
 export default Footer;

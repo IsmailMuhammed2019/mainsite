@@ -89,12 +89,14 @@ const Header = () => {
 
                 {/* Waitlist Button */}
                 <div className="hidden lg:block mt-4 sm:mt-0">
-                    <Button
-                        variant="outline"
-                        className="border-[#4C368C] text-[#4C368C] hover:bg-[#4C368C] hover:text-white rounded-full px-3 py-1 sm:px-4 sm:py-2 cursor-pointer transition duration-300 ease-in-out"
-                    >
-                        Join Our Waitlist
-                    </Button>
+                    <Link href="/contact">
+                        <Button
+                            variant="outline"
+                            className="border-[#4C368C] text-[#4C368C] hover:bg-[#4C368C] hover:text-white rounded-full px-3 py-1 sm:px-4 sm:py-2 cursor-pointer transition duration-300 ease-in-out"
+                        >
+                            Join Our Waitlist
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </header>
