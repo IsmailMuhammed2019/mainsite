@@ -102,7 +102,7 @@ const Carousel1 = () => {
                                                 className={`px-6 py-2 inline-block rounded-full font-semibold transition duration-300 bg-white text-[#4C368C] border border-transparent hover:bg-transparent hover:border-white hover:text-white cursor-pointer`}
                                                 onClick={() => {
                                                     if (item.id === 2) {
-                                                        window.location.href = "/verify";
+                                                        window.location.href = "/verifyng";
                                                     }
                                                 }}
                                             >
