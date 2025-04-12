@@ -2,16 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
-import { cn } from "@/lib/utils"; // Utility function for conditional classNames
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import Header from "@/components/header"; // Assuming you have a Header component
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
 import Hero from "@/components/hero";
 import Features from "@/components/features";
 import WhyChoose from "@/components/whychoose";
@@ -23,12 +14,6 @@ import Footer from "@/components/footer";
 import Founders from "@/components/founders";
 
 const MainPage = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    
-
-
 
     return (
         <div className="flex flex-col min-h-screen font-sans">

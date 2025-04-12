@@ -10,7 +10,7 @@ const WhyChoose = () => {
                         <div className="flex flex-col justify-start item-start">
 
                             <h2 className="text-2xl lg:text-4xl font-bold text-[#4C368C] mb-8 mt-4">
-                                We're Best in AI and Big Data Solution Industry with 10 Years of Experience
+                                We&apos;re Best in AI and Big Data Solution Industry with 10 Years of Experience
                             </h2>
                             <p className="text-sm lg:text-base text-gray-700 mb-6">
                                 Leveraging a decade of expertise to deliver cutting-edge AI solutions that drive innovation and efficiency, we have consistently set industry standards. Our commitment to excellence and deep understanding of AI technologies enable us to provide tailored solutions that meet the unique needs of each client, ensuring sustained growth and competitive advantage.

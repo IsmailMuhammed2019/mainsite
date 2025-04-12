@@ -29,7 +29,7 @@ const Testimonials = () => {
             id: 3,
             name: "Michael Brown",
             position: "Manager, DataPro",
-            message: "We’ve seen incredible results since partnering with Quantum Space Dynamics. Their AI solutions are truly transformative.",
+            message: "We&apos;ve seen incredible results since partnering with Quantum Space Dynamics. Their AI solutions are truly transformative.",
             image: "./imgs/test3.jpeg",
         },
         {
@@ -57,7 +57,7 @@ const Testimonials = () => {
                 </div>
                 <h2 className="text-3xl lg:text-5xl font-bold text-[#4C368C] mb-4">What Say Our Clients!</h2>
                 <p className="text-sm lg:text-base text-gray-700">
-                    Hear from our clients about their experiences and successes with our AI solutions. Discover how we've transformed their operations, enhanced their <br/> efficiency, and driven their growth with our cutting-edge technology and dedicated support.
+                    Hear from our clients about their experiences and successes with our AI solutions. Discover how we&apos;ve transformed their operations, enhanced their <br/> efficiency, and driven their growth with our cutting-edge technology and dedicated support.
                 </p>
             </div>
 

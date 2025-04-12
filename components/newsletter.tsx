@@ -15,7 +15,7 @@ const Newsletter = () => {
                         {/* Right Side */}
                         <div className="w-full lg:w-2/3 flex flex-col items-start lg:px-8">
                             <p className="text-sm font-bold text-[#4C368C] mb-10 px-8 py-2 bg-white rounded-full">Newsletter</p>
-                            <h2 className="text-2xl lg:text-4xl font-bold mb-8">Let's Subscribe the Newsletter</h2>
+                            <h2 className="text-2xl lg:text-4xl font-bold mb-8">Let&apos;s Subscribe the Newsletter</h2>
                             <div className="w-full bg-white rounded-full flex items-center px-4 py-2 mb-4">
                                 <input
                                     type="email"

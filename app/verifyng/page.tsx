@@ -6,3 +6,4 @@ const Verifyng = () => {
         </div>
         )
 }
+export default Verifyng;
