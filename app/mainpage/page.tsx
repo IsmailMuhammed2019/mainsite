@@ -1,7 +1,4 @@
-'use client'
 
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
 import Header from "@/components/header"; // Assuming you have a Header component
 import Hero from "@/components/hero";
 import Features from "@/components/features";

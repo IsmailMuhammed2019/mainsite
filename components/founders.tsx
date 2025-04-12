@@ -1,9 +1,5 @@
 'use client'
 
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
-import { cn } from "@/lib/utils"; // Utility function for conditional classNames
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
     Carousel,

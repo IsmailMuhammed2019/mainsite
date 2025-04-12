@@ -1,17 +1,6 @@
-'use client'
 
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button is set up
-import { cn } from "@/lib/utils"; // Utility function for conditional classNames
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import Header from "@/components/header"; // Assuming you have a Header component
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
+
 
 const FAQs = () => {
     return (
