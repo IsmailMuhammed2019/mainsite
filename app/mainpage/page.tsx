@@ -20,6 +20,7 @@ import FAQs from "@/components/faq";
 import Newsletter from "@/components/newsletter";
 import Contact1 from "@/components/contact"; // Assuming you have a Contact component
 import Footer from "@/components/footer";
+import Founders from "@/components/founders";
 
 const MainPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,6 +51,9 @@ const MainPage = () => {
 
                 {/* FAQ Section */}
                 <FAQs />
+
+                {/* Founders Section */}
+                <Founders />
 
                 {/* Newsletter Section */}
                 <Newsletter />

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link'; // Import Link from next/link
 import { Button } from '@/components/ui/button'; // Assuming the Button component is from shadcn/ui
 
 const Header = () => {
@@ -52,36 +53,36 @@ const Header = () => {
                 >
                     <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 mt-4 lg:mt-0">
                         <li>
-                            <a
-                                href="#home"
+                            <Link
+                                href="/"
                                 className="text-sm px-2 py-1 border border-transparent rounded transition duration-300 hover:text-gray-500 hover:border-[#4C368C] hover:rounded-lg"
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#about"
+                            <Link
+                                href="/about"
                                 className="text-sm px-2 py-1 border border-transparent rounded transition duration-300 hover:text-gray-500 hover:border-[#4C368C] hover:rounded-lg"
                             >
                                 About
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#services"
+                            <Link
+                                href="/services"
                                 className="text-sm px-2 py-1 border border-transparent rounded transition duration-300 hover:text-gray-500 hover:border-[#4C368C] hover:rounded-lg"
                             >
                                 Services
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#contact"
+                            <Link
+                                href="/contact"
                                 className="text-sm px-2 py-1 border border-transparent rounded transition duration-300 hover:text-gray-500 hover:border-[#4C368C] hover:rounded-lg"
                             >
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

@@ -1,7 +1,7 @@
 const Newsletter = () => {
     return (
         <>
-        <section className="px-6 lg:px-12 py-12 bg-[#1F1F1F] text-white mt-8 rounded-lg shadow-lg">
+        <section className="px-6 lg:px-12 py-12 bg-[#1F1F1F] text-white mt-8 rounded-lg">
                     <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
                         {/* Left Side */}
                         <div className="w-full lg:w-1/3 flex justify-center">
