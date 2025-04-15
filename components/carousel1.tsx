@@ -120,7 +120,7 @@ const Carousel1 = () => {
                         </div>
 
                         {/* Controls */}
-                        <div className="transform -translate-x-1/2 flex items-center justify-center space-x-4">
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-4">
                             <button
                                 onClick={() =>
                                     setCurrentIndex(
@@ -128,11 +128,11 @@ const Carousel1 = () => {
                                             (prevIndex - 1 + divItes.length) % divItes.length
                                     )
                                 }
-                                className="flex items-center justify-center bg-[#7968A9] text-white w-10 h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
+                                className="flex items-center justify-center bg-[#7968A9] text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
+                                    className="h-4 w-4 sm:h-5 sm:w-5"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -149,11 +149,11 @@ const Carousel1 = () => {
                                 onClick={() =>
                                     setCurrentIndex((prevIndex) => (prevIndex + 1) % divItes.length)
                                 }
-                                className="flex items-center justify-center bg-[#7968A9] text-white w-10 h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
+                                className="flex items-center justify-center bg-[#7968A9] text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md hover:bg-gradient-to-r hover:from-[#7879F1] hover:via-[#45468B] hover:to-[#4C368C] transition duration-300"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
+                                    className="h-4 w-4 sm:h-5 sm:w-5"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
