@@ -1,9 +1,18 @@
+import Footer1 from "./components/footer1";
+import Header1 from "./components/header1";
+import Hero from "./components/hero";
+
+
 const Verifyng = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold mb-4">Verification Page</h1>
-            <p className="text-lg mb-8">coming soon</p>
+        <div className="flex flex-col min-h-screen font-sans">
+            {/* Container */}
+            <div className="container mx-auto px-4 lg:px-12">
+                <Header1 />
+                <Hero />
+                <Footer1 />
+            </div>
         </div>
-        )
+    )
 }
 export default Verifyng;
