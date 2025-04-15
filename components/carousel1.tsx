@@ -81,7 +81,7 @@ const Carousel1 = () => {
                     </div>
                     <div className="relative h-[90%] justify-center items-center flex flex-col overflow-hidden">
                         {/* Carousel Container */}
-                        <div className="flex items-center justify-center overflow-hidden h-full w-full">
+                        <div className="flex items-center justify-center overflow-hidden mb-8 h-full w-full">
                             {divItes.map((item, index) => (
                                 <div
                                     key={item.id}
@@ -120,7 +120,7 @@ const Carousel1 = () => {
                         </div>
 
                         {/* Controls */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-4">
+                        <div className="absolute bottom-4  left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-4">
                             <button
                                 onClick={() =>
                                     setCurrentIndex(
