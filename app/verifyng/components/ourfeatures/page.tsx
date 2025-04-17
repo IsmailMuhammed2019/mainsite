@@ -72,7 +72,7 @@ const OurFeatures = () => {
                     <div className="bg-[#349B30] p-6 rounded-lg shadow-md text-white flex flex-col">
                         <h3 className="text-xl font-bold mb-4">Fully Secured</h3>
                         <p className="text-sm">
-                            Ensures that sensitive information remains protected from unauthorized access, safeguarding the integrity and confidentiality of your organization's assets.
+                            Ensures that sensitive information remains protected from unauthorized access, safeguarding the integrity and confidentiality of your organization&apos;s assets.
                         </p>
                     </div>
                 </div>
